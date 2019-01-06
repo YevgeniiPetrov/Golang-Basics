@@ -2,15 +2,27 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"html/template"
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path[1:])
+func homeRouterHandler(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles(
+		"templates/index.html",
+		"templates/header.html",
+		"templates/main.html",
+		"templates/footer.html",
+	)
+
+	if err != nil {
+		fmt.Fprint(w, err.Error())
+	}
+
+	t.ExecuteTemplate(w, "index", nil)
 }
 
 func main() {
-	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
+	http.HandleFunc("/", homeRouterHandler)
+	http.ListenAndServe(":9000", nil)
 }
