@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	b := false
+	b := true
 	str := bool.ToString(b)
 	fmt.Printf("%s (%T)\n", str, str)
 
@@ -36,4 +36,12 @@ func main() {
 
 	var bt byte = bool.ToByte(b)
 	fmt.Printf("%d (%T)\n", bt, bt)
+
+	var rn rune = bool.ToRune(b)
+	fmt.Printf("%d (%T)\n", rn, rn)
+
+	var f32 float32 = bool.ToFloat32(b)
+	fmt.Printf("%g (%T)\n", f32, f32)
+	var f64 float64 = bool.ToFloat64(b)
+	fmt.Printf("%g (%T)\n", f64, f64)
 }

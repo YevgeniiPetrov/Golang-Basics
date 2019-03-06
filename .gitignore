@@ -3,4 +3,8 @@
 server_001/.vscode/* 
 shape/.vscode/* 
 type_assertions/.idea/*
+<<<<<<< HEAD
 .idea/
+=======
+.idea/*
+>>>>>>> 9e1b8331965e9fa71ddad4520dfdd3b86c17e4a1
