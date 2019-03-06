@@ -1,4 +1,4 @@
-package bool
+package fromBool
 
 func ToInt(b bool) (i int) {
 	if b {

@@ -1,4 +1,4 @@
-package bool
+package fromBool
 
 func ToUint(b bool) (i uint) {
 	if b {

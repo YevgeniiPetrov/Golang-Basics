@@ -1,4 +1,4 @@
-package bool
+package fromBool
 
 import "strconv"
 

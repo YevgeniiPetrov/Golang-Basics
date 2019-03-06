@@ -1,4 +1,4 @@
-package bool
+package fromBool
 
 func ToFloat32(b bool) (i float32) {
 	if b {
